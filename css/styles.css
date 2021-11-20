@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  height: 100vh;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.container .navbar {
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(133, 133, 133);
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+}
+.container .navbar .logo {
+  font-size: 35px;
+  color: white;
+  flex: 1;
+  padding: 1rem;
+  align-self: center;
+}
+
+.container .navbar .links {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  padding-right: 2rem;
+  font-weight: bold;
+  justify-content: center;
+}
+
+.container .navbar .links .navbar_item {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.container .navbar .links .navbar_item a.active {
+  background-color: rgb(46, 46, 46);
+}
+
+.container .navbar .links .navbar_item a {
+  text-decoration: none;
+  color: white;
+  height: 100%;
+  padding: 0 1rem;
+  padding-top: 25px;
+}
+.container .sections {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.sections .section {
+  display: flex;
+  flex-direction: column;
+
+  height: -o-calc(100vh); /* opera */
+  height: -webkit-calc(100vh); /* google, safari */
+  height: -moz-calc(100vh); /* firefox */
+  width: 70%;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  gap: 1rem;
+  width: 100%;
+  padding: 0 2rem;
+}
+
+.header h1 {
+  font-size: 55px;
+  color: rgb(78, 78, 78);
+}
+
+.sections .section p {
+  font-style: italic;
+  width: 50%;
+}
+
+#section_1 {
+  background-color: chartreuse;
+}
+
+#section_2 {
+  background-color: darkgrey;
+}
+
+#section_3 {
+  background-color: darkslategray;
+}
+
+#section_4 {
+  background-color: dimgray;
+}
+
+#section_5 {
+  background-color: lightsalmon;
+}
+
+.upBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border-radius: 50px;
+  outline: none;
+  border: none;
+  background-color: rgb(246, 196, 58);
+  font-size: 35px;
+  padding: 15px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+}
