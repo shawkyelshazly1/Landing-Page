@@ -1,61 +1,62 @@
-let navbarLinks = document.querySelector(".links");
+/**
+ * 
+ * Manipulating the DOM exercise.
+ * Exercise programmatically builds navigation,
+ * scrolls to anchors from navigation,
+ * and highlights section in viewport upon scrolling.
+ * 
+ * Dependencies: None
+ * 
+ * JS Version: ES2015/ES6
+ * 
+ * JS Standard: ESlint
+ * 
+*/
 
-let sections = [...document.querySelectorAll(".section")];
+/**
+ * Comments should be present at the beginning of each procedure and class.
+ * Great to have comments before crucial code sections within the procedure.
+*/
 
-// Creating a fake fragment to hold the li items with links inside
-let fakeFragment = document.createDocumentFragment();
+/**
+ * Define Global Variables
+ * 
+*/
 
-// Looping through sections to add links dynamically
-for (let section of sections) {
-  let navItem = document.createElement("li");
-  let link = document.createElement("a");
 
-  // Adding active class to first link
-  section.dataset.name === "Header" ? link.classList.add("active") : null;
+/**
+ * End Global Variables
+ * Start Helper Functions
+ * 
+*/
 
-  navItem.classList.add("navbar_item");
-  link.setAttribute("href", `#${section.id}`);
-  link.textContent = `${section.dataset.name}`;
-  navItem.appendChild(link);
 
-  // Setting click eventListener to each Navbar Item
-  navItem.addEventListener(
-    "click",
-    (e) => {
-      toggelActiveButton();
-      e.target.classList.add("active");
-    },
-    true
-  );
-  fakeFragment.appendChild(navItem);
-}
 
-navbarLinks.appendChild(fakeFragment);
+/**
+ * End Helper Functions
+ * Begin Main Functions
+ * 
+*/
 
-// Function to add remove class active from all links to be added to clicked one only
-function toggelActiveButton() {
-  navbarLinks.querySelectorAll("a").forEach((link) => {
-    link.classList.remove("active");
-  });
-}
+// build the nav
 
-document.querySelector(".upBtn").addEventListener("click", (e) => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
 
-window.onscroll = function () {
-  if (document.documentElement.scrollTop > 100) {
-    document.querySelector(".upBtn").style.display = "block";
-  } else {
-    document.querySelector(".upBtn").style.display = "none";
-  }
+// Add class 'active' to section when near top of viewport
 
-  sections.forEach((section) => {
-    if (section.getBoundingClientRect().top < window.innerHeight / 3) {
-      toggelActiveButton();
-      navbarLinks
-        .querySelector(`[href="#${section.id}"]`)
-        .classList.add("active");
-    }
-  });
-};
+
+// Scroll to anchor ID using scrollTO event
+
+
+/**
+ * End Main Functions
+ * Begin Events
+ * 
+*/
+
+// Build menu 
+
+// Scroll to section on link click
+
+// Set sections as active
+
+
