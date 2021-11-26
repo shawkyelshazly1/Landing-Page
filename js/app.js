@@ -35,6 +35,7 @@ let scrollTopBtn = document.querySelector(".scroll__top");
  * End Global Variables
  */
 
+// Creating dynamic nav links based on sections in html
 function createNavItems(sections) {
   sections.forEach((section) => {
     let item = document.createElement("li");
@@ -47,6 +48,11 @@ function createNavItems(sections) {
   return tempFragment;
 }
 
+/*
+ * Detecting active section in view port while scrolling
+ * Accepts sections variable to loop through and check if each in view port to set active class
+ * adds active class to the link relative to the section in viewport while setting rest of links inactive
+ */
 function detectActiveSectionOnScroll(sections) {
   sections.forEach((section) => {
     let rect = section.getBoundingClientRect();
@@ -66,6 +72,7 @@ function detectActiveSectionOnScroll(sections) {
   });
 }
 
+// Helper function to remove active class from inactive links
 function removeActiveFromOtherLinks(activeLink) {
   let links = document.querySelectorAll(".menu__link");
   links.forEach((link) => {
@@ -75,17 +82,26 @@ function removeActiveFromOtherLinks(activeLink) {
   });
 }
 
+// function to set active links
 function setActiveLink(activelink) {
   activelink.classList.add("active");
   removeActiveFromOtherLinks(activelink);
 }
 
+/*
+ * Function to hide navbar based on scroll stop
+ * checking if scroll stop every 1.5s using Settimeout
+ */
 function hideNavOnScrollStop() {
   window.clearTimeout(isScrolling);
   isScrolling = setTimeout(() => {
     document.querySelector(".navbar__menu").classList.add("hidden");
   }, 1500);
 }
+
+/*
+ * Function to hide & show scrollToTop button based on scrolled value
+ */
 
 function showScrollTopButton(scrolledValue) {
   if (scrolledValue > 300) {
