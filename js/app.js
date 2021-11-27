@@ -56,10 +56,13 @@ function createNavItems(sections) {
 function detectActiveSectionOnScroll(sections) {
   sections.forEach((section) => {
     let rect = section.getBoundingClientRect();
+    if (section.id == "section2") {
+      console.log(rect.bottom);
+    }
     let isInViewPort =
       rect.top >= 0 &&
       rect.left >= 0 &&
-      rect.bottom <= viewportHeight &&
+      rect.bottom <= viewportHeight * 1.5 &&
       rect.right <= viewportWidth;
 
     if (isInViewPort) {
